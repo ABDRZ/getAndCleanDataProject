@@ -1,21 +1,15 @@
-# getAndCleanDataProject
-project from coursera getting and cleaning data course
+# script functions
 
-## Introduction
+Four functions are coded in the run_analysis script:
+* load_xys(): load and merge the training and test data 
 
-This assignment project uses data from
+* label_features(): reads and returns feature lables
 
-<a https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
+* scol_features() : selects the columns that contain measurements on the mean or standard deviation
 
-It is about creating one R script called run_analysis.R that does the following: 
-1-Merges the training and the test sets to create one data set.
-2-Extracts only the measurements on the mean and standard deviation for each measurement. 
-3-Uses descriptive activity names to name the activities in the data set
-4-Appropriately labels the data set with descriptive variable names. 
-5-From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+* tidy_xys(): reads and  agregates data by activity and by subject and computes the mean of recorded measurements
 
-
-## merging the training and the test data.
+# load_xys(): merging the training and the test data.
 
 to create one data set, one can proceed as following:
 
@@ -32,12 +26,12 @@ to create one data set, one can proceed as following:
 6- we merge the rows of xtr and xts to obtain a table (xrs) that have the same columns as 
 xtr and xts
 
-7- finally we subset the xrs table to keep only the columns related to mean and standard deviation measurement + the activity lable and the subject
+7- finally we subset the xrs table to keep only the columns related to mean and standard deviation measurement + the activity label and the subject
 
-##tidying data set with the average of each variable for each activity and each subject.
-1- first we ensure that there are no dublicated columns in the xtr table
+#tidy_xys(): tidying data set with the average of each variable for each activity and each subject.
+
+1- first we ensure that there are no dublicated columns (related to activity code and subject) in the xtr table
+
 2- we agregate the table according to activity lables and subjects
-3- we compute the mean of all remaining columns for each row.
 
-## inertial data
-since the columns set in inertial data is different than the columns set in x_train.txt, x_test.txt, one can process this set of data separtely using the same steps as described before. 
+3- we compute the mean of all remaining columns for each row.
