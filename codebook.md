@@ -1,7 +1,7 @@
 # script functions
 
 Four functions are coded in the run_analysis script:
-* load_xys(): load and merge the training and test data 
+* load_xys(): loads and merges the training and test data 
 
 * label_features(): reads and returns feature lables
 
